@@ -265,7 +265,6 @@ body {
 /*ゆっくりローディング*/
 .fade-up {
   opacity: 0;
-  transform: translateY(25px);
   animation: fadeUp 1s ease-out forwards;
 }
 
@@ -276,18 +275,16 @@ body {
 @keyframes fadeUp {
   0% {
     opacity: 0;
-    transform: translateY(25px);
   }
   100% {
     opacity: 1;
-    transform: translateY(0);
   }
 }
 
 /*アイコン----------------------------------------------------*/
 .icon {
   position: fixed;
-  bottom: -1vw;
+  bottom: 0;
   left: 50%;
   transform: translateX(-50%);
   
@@ -341,7 +338,7 @@ body {
 /*幅が650px以下になったら*/
 @media (max-width: 650px) {
   .icon {
-    display: block;
+    display: flex;
     left: 0;
     right: 0;
     bottom: 0;
@@ -351,7 +348,7 @@ body {
     display: none;
   }
   .icon-top {
-    display: block !important;
+    display: flex !important;
     position: fixed;
     bottom: 0;
     right: 0;
@@ -359,11 +356,12 @@ body {
     margin: 0;
   }
   .icon-menu {
-    display: block !important;
+    display: flex !important;
     position: fixed;
     width: 65px;
     top: 7vw;
     left: 7vw;
     transform: translate(-50%, -50%);
+    z-index: 10;
   }
 }
